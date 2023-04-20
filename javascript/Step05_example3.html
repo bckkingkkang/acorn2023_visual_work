@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_example3.html</title>
+</head>
+<body>
+    <h1>다중 if문 TEST</h1>
+    <input type="text" id="jumsu" placeholder="점수 입력...">
+    <button onclick="check()">확인하기</button>
+    <p>
+        <strong id="result"></strong> 학점입니다.
+    </p>
+
+    <script>
+        let check = () => {
+            let jumsu = document.querySelector("#jumsu").value;
+
+            if ( 90 <= jumsu ) {
+                document.querySelector("#result").innerText = "A";
+            } else if ( 80 <= jumsu) {
+                document.querySelector("#result").innerText = "B";
+            } else if ( 70 <= jumsu ) {
+                document.querySelector("#result").innerText = "C";
+            } else if ( 60 <= jumsu) {
+                document.querySelector("#result").innerText = "D";
+            } else {
+                document.querySelector("#result").innerText = "F";
+            }
+        }
+        
+    </script>
+</body>
+</html>

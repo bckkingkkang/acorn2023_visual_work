@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+
+            border-top:1px solid #444444;
+            border-color: rgba(255, 0, 0, 0);
+        }
+        th, td {
+            border-bottom : 1px solid rgb(0, 0, 0);
+            border-left : 1px solid rgba(0, 0, 0, 0);
+            padding:10px;
+            text-align : center;
+        }
+        th:first-child, td:first-child {
+            border-left:none;
+        }
+        .my_btn {
+            background-color: rgba(255, 255, 0, 0);
+            color:#444444;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <caption style="color: red;">친구들 목록</caption>
+        <colgroup>
+            <col width="100px">
+            <col width="80px">
+            <col width="200px">
+        </colgroup>
+        <tr>
+            <th scope="col">이름</th>
+            <th scope="col">나이</th>
+            <th scope="col">취미</th>
+        </tr>
+        <tr class="trColor">
+            <td height="0">
+                <button onclick="bong()" class="my_btn">홍길동</button>
+            </td>
+            <td rowspan="2">25</td>
+            <td>영화 감상</td>
+        </tr>
+        <tr class="trColor">
+            <td>
+                <button onclick="kahyun()" class="my_btn">고가현</button>
+            </td>
+            <td>컴퓨터 게임</td>
+        </tr>
+        <tr>
+            <td colspan="3">이름을 클릭하세요</td>
+        </tr>
+    </table>
+    <script>
+        function kahyun() {
+            alert("고가현님 안녕하세요!");
+        }
+        function bong() {
+            alert("홍길동님 안녕하세요!");
+        }
+    </script>
+
+</body>
+</html>

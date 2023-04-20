@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_example2.html</title>
+</head>
+<body>
+    <h1>논리 연산자 테스트</h1>
+    <p>
+        유아 전용 놀이기구입니다.<br>
+        탑승 조건<br>
+        몸무게 : 30kg 미만<br>
+        키 : 150cm 미만<br>
+    </p>
+
+    <input type="text" id="weight" placeholder="몸무게 입력..."><br>
+    <input type="text" id="height" placeholder="키 입력..."><br>
+    <button onclick="check()">확인하기</button>
+    <p id="result"></p>
+
+    <script>
+        let check = () => {
+            let w = document.querySelector("#weight").value;
+            let h = document.querySelector("#height").value;
+
+            if ( w < 30 && h < 150 ) {
+                document.querySelector("#result").innerText = "탑승 가능합니다.";
+            } else if (w > 30 && h < 150) {
+                document.querySelector("#result").innerText = "탑승 불가능합니다. 몸무게를 확인해주세요";
+            } else if (w < 30 && h > 150) {
+                document.querySelector("#result").innerText = "탑승 불가능합니다. 키를 확인해주세요";
+            } else {
+                document.querySelector("#result").innerText = "탑승 불가능합니다. 몸무게와 키를 확인해주세요";
+            }    
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_example.html</title>
+</head>
+<body>
+    <h1>if ~ else TEST</h1>
+    <p>몸무게 100kg 이상 번지점프 불가</p>
+    <input type="text" id="weight" placeholder="몸무게 입력...">
+    <button onclick="checkWeight()">확인</button>
+    <p id="result"></p>
+
+    <script>
+
+        function checkWeight() {
+            let w = document.querySelector("#weight").value;
+            if( w < 100) {
+                document.querySelector("#result").innerText = "이용 가능합니다.";
+            } else {
+                document.querySelector("#result").innerText = "이용 불가능합니다."
+            }
+        }
+    </script>
+</body>
+</html>

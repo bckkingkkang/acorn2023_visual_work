@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login.html</title>
+    <style>
+        .container {
+            width : 768px;
+            margin : 0 auto;  
+        }
+        textarea {
+            color : #cecece;
+        }
+        select {
+            margin-bottom: 5px;
+        }
+        #lion {
+            width: 50px;
+            height: 50px;
+        }
+        button {
+            background-color: #ffffff;
+            border-radius : 10px;
+        }
+        body {
+            background-image: url("images/backbg2.png");
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 align="center">회원가입</h1>
+    
+        <form action="login.jsp" align="center">
+            <img src="images/t9lion_trans.png" id="lion">
+            <label for="name">이름</label>
+            <input type="text" name="name" id="name">
+            <br>
+
+            <label for="birthDay">생년월일</label>
+            <input type="date" name="birthDay" id="birthDay">
+            <br><br>
+
+            <label for="address">주소</label>
+            <select name="address" id="address">
+                <option value="seoul">서울</option>
+                <option value="busan">부산</option>
+                <option value="deagu">대구</option>
+                <option value="kangwon">강원</option>
+                <option value="jeju">제주</option>
+                <option value="dokdo">독도</option>
+            </select>
+            <button><a href="loginCheck.html">도로명 주소 찾기<img src="images/btn_icon_search.png"></a></button>
+            <br>
+            <textarea name="address2" id="address2" cols="30">그 외 상세 주소를 입력하세요</textarea>
+            <br><br>
+
+            <label for="id">아이디 입력</label>
+            <input type="text" name="id" id="id">
+            <button onclick ="idCheck()">중복 확인 <img src="images/btn_icon_search.png"></button>
+            <br><br>
+
+            <label for="pwd">비밀번호 입력</label>
+            <input type="password" name="pwd" id="pwd"><br>
+            <label for="pwdCheck">비밀번호 확인</label>
+            <input type="password" name="pwdCheck" id="pwdCheck">
+            <button>확인</button>
+            <br><br>
+
+            <fieldset>
+                <legend>개인 정보 이용에 동의하시겠습니까?</legend>
+                <label>
+                    <input type="radio" name="agree" value="yes">예
+                    <input type="radio" name="agree" value="no">아니오
+                </label>
+            </fieldset>
+
+            <br><br>
+            <button type="submit">회원 가입</button>
+            <button type="reset">초기화</button>
+        </form>
+    </div>
+
+    <script>
+        function idCheck() {
+            alert("사용 가능한 아이디입니다!");
+        }
+    </script>
+
+</body>
+</html>

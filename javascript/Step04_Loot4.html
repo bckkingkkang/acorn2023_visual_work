@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열의 size만큼 반복문 수행</h1>
+    <p>1p</p>
+    <p>2p</p>
+    <p>3p</p>
+    <p>4p</p>
+    <p>5p</p>
+    <button onclick="change()">Button</button>
+    <script>
+        let nums = [10, 20, 30, 40, 50];
+
+        // nums.forEach (function(item, index) {
+        //     console.log(index + " : " + nums[i]);
+        // });
+        let change = () => {
+            nums.forEach(function(item, index) {
+                document.querySelectorAll("p")[index].innerText = item;
+            });
+        }
+    </script>
+</body>
+</html>

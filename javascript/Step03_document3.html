@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_document3.html</title>
+    <style>
+        p {
+            color : blue;
+        }
+        .box {
+            width : 100px;
+            height : 100px;
+            background-color: yellow;
+            cursor : pointer;
+            transition : margin-left 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>인라인 css 테스트</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus dolorum excepturi non nulla architecto reprehenderit consectetur odio, ipsum et mollitia optio. Delectus, labore! Minima quos laborum architecto reiciendis perspiciatis provident.</p>
+    <div class="box" onclick="moveBox()">눌러보기</div>
+
+    <script>
+        let mLeft = 0;
+        let mTop = 0;
+        let moveBox = () => {
+            mLeft += 100;
+            document.querySelector(".box").style.marginLeft = mLeft+"px";
+            if ( mLeft == 1000) {
+                mLeft -= 1000;
+                mTop += 100;
+                document.querySelector(".box").style.marginLeft = mLeft+"px";
+                document.querySelector(".box").style.marginTop = mTop +"px";
+                document.querySelector(".box").style.backgroundColor = "red";
+                alert("되돌아갑ㄴ다");
+            } else {
+                document.querySelector(".box").style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+</body>
+</html>
