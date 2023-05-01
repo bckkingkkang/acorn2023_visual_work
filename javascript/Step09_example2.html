@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>스탑워치 만들어보기</h1>
+
+    <p>
+        <Strong id="min">0</Strong> :
+        <Strong id="sec">0</Strong> :
+        <Strong id="mSec">0</Strong>
+    </p>
+    <button id="startBtn">시작</button>
+    <button id="resteBtn">재설정</button>
+
+    <script>
+        let min = 0, sec = 0, mSec = 0;
+        let isStarted = false;
+
+        document.querySelector("#startBtn").addEventListener("click", (e) => {
+            // 이벤트가 일어난 요소의 innerText를 바꾸기
+
+            if (isStarted) {
+                isStarted = false;
+                e.target.innerText = "중단";
+                setInterval(() => {
+                // 1/100 초마다 한 번씩 호출되는 함수
+                mSec++;
+                if (mSec == 100) {
+                    sec++;
+                    mSec = 0;
+                }
+                if (sec == 60) {
+                    min++;
+                    sec = 0;
+                }
+                document.querySelector("#mSec").innerText = mSec;
+                document.querySelector("#sec").innerText = sec;
+                document.querySelector("#min").innerText = min;
+                }, 10);
+            } else {
+                isStarted = true;
+                e.target.innerText = "시작";
+            }
+        });
+        
+            // if (e.target.innerText == "시작") {
+            //     e.target.innerText = "중단";
+                
+            //     setInterval(()=>{
+            //     mSec++;
+            //     if ( mSec == 1000 ) {
+            //         sec ++;
+            //     }
+            //     document.querySelector("#mSec").innerText = mSec;
+            //     document.querySelector("#sec").innerText = sec;
+            // });
+            // } else {
+            //     e.target.innerText = "시작";
+            // }
+            
+       
+
+        document.querySelector("#resetBtn").addEventListener("click", () => {
+            // 변수를 모두 초기화
+            min = 0;
+            sec = 0;
+            mSec = 0;
+            // 초기화된 값을 화면에 반영
+            document.querySelector("#min").innerText = min;
+            document.querySelector("#sec").innerText = sec;
+            document.querySelector("#mSec").innerText = mSec;
+
+            // 버튼의 innerText도 초기화
+            document.querySelector("#startBtn").innerText = "시작";
+        });
+    </script>
+</body>
+</html>
